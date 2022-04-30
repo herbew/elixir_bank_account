@@ -28,5 +28,28 @@ It should be possible to close an account;
 operations against a closed account must fail.
 
 ## mix test
+xcluding tags: [:pending]
+
+BankAccountTest [test/bankaccount_test.exs]
+  * test 3. Reduce balance (excluded) [L#20]
+  * test 4. Multiple account support (excluded) [L#27]
+  * test 5. Close (excluded) [L#41]
+  * test 2. Adding balance (excluded) [L#13]
+  * test 1. Initial balance is 0 (1.9ms) [L#8]
+
+Finished in 0.04 seconds (0.00s async, 0.04s sync)
+5 tests, 0 failures, 4 excluded
+
 
 ## mix test --include pending
+Including tags: [:pending]
+
+BankAccountTest [test/bankaccount_test.exs]
+  * test 1. Initial balance is 0 (2.6ms) [L#8]
+  * test 3. Reduce balance (0.3ms) [L#20]
+  * test 4. Multiple account support (0.04ms) [L#28]
+  * test 5. Close (5.4ms) [L#42]
+  * test 2. Adding balance (0.2ms) [L#13]
+
+Finished in 0.04 seconds (0.00s async, 0.04s sync)
+

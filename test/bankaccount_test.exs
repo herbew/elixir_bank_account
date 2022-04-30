@@ -18,6 +18,7 @@ defmodule BankAccountTest do
 	
 	@tag :pending
 	test "3. Reduce balance", %{account: account} do
+	      BankAccount.update(account, 100)
 		  assert BankAccount.balance(account) == 100
 		  BankAccount.update(account, -20)
 		  assert BankAccount.balance(account) == 80
@@ -39,10 +40,8 @@ defmodule BankAccountTest do
 	
 	@tag :pending
 	test "5. Close", %{account: account} do
-		  assert BankAccount.balance(account) == 80
 		  BankAccount.close(account)
 		  assert BankAccount.balance(account) == {:error, :account_closed}
 	end #test "5. Close", %{account: account} do
-end
 	
 end
